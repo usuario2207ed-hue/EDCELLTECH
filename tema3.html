@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>EDCELL-TECH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="google-adsense-account" content="ca-pub-3403987938490863">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3403987938490863"
+     crossorigin="anonymous"></script>
+
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<meta name="theme-color" content="#4f8cff">
+
+<style>
+  body { margin:0; padding:0; background:#000; color:#0f0; font-family:Consolas, monospace; display:flex; flex-direction:column; min-height:100vh; overflow-y:scroll; transition: background 1s linear, color 1s linear; }
+  h1 { text-align:center; font-size:40px; margin:60px 0 30px 0; position:relative; color:#0f0; text-shadow:0 0 12px #0f0; transition: color 1s linear, text-shadow 1s linear, opacity 0.1s; }
+  .menu { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:10px; z-index:2; padding-bottom:20px; width:100%; max-width:700px; margin:0 auto; }
+  .accordion-btn { width:80%; max-width:500px; background:rgba(0,0,0,0.6); border:2px solid #0f0; color:#0f0; padding:18px 36px; text-align:left; font-size:20px; font-weight:bold; border-radius:12px; cursor:pointer; position:relative; transition: background 0.3s ease, color 1s linear, border 1s linear; }
+  .accordion-btn:hover { background: rgba(0,255,0,0.2); }
+  .accordion-btn::after { content:'+'; position:absolute; right:20px; font-size:22px; transition: transform 0.3s ease; }
+  .accordion-btn.active::after { content:'−'; }
+  .accordion-panel { max-height:0; overflow:hidden; transition:max-height 0.4s ease; width:70%; max-width:400px; display:flex; flex-direction:column; gap:10px; padding-left:10px; padding-right:10px; }
+  .accordion-panel a { display:flex; justify-content:center; align-items:center; text-decoration:none; color:#0f0; border:2px solid #0f0; padding:18px 30px; border-radius:12px; text-align:center; font-size:16px; font-weight:bold; background:rgba(0,0,0,0.6); transition: transform 0.4s ease, background 0.3s ease, color 1s linear, border 1s linear; }
+  .accordion-panel a:hover { background: rgba(0,255,0,0.2); transform: scale(1.05); }
+  .accordion-panel a.clicked { animation: clickPulse 0.3s ease; }
+  @keyframes clickPulse { 0% { transform: scale(1); } 50% { transform: scale(0.95); } 100% { transform: scale(1); } }
+  footer { background:transparent; color:#0f0; text-align:center; padding:16px; font-size:16px; animation:blink 1s step-start infinite; animation-delay:10s; z-index:2; transition: color 1s linear; }
+  @keyframes blink { 0%,49%{opacity:1;}50%,100{opacity:0;} }
+  .letter { position:fixed; font-size:60px; color:#0f0; pointer-events:none; animation:explode 5s forwards; z-index:10; text-shadow:0 0 18px #0f0,0 0 36px #0f0; }
+  @keyframes explode { 0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(2);} }
+  .popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:flex; align-items:center; justify-content:center; z-index:999; }
+  .popup-content { background:#001a00; border:2px solid #0f0; padding:30px 40px; border-radius:12px; text-align:center; color:#0f0; box-shadow:0 0 20px #0f0; animation:fadeIn 0.6s ease; }
+  @keyframes fadeIn { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+  .popup button { margin-top:20px; padding:12px 30px; font-size:18px; font-weight:bold; color:#fff; background:#00cc00; border:none; border-radius:8px; cursor:pointer; transition: transform 0.2s; }
+  .popup button:hover { transform:scale(1.1); background:#00ff00; }
+  .popup-close { position:absolute; top:20px; right:20px; color:#0f0; font-size:22px; cursor:pointer; }
+  #doarBtnFixo { position:relative; display:none; text-align:center; margin:10px auto; padding:10px 28px; font-size:20px; background:#00cc00; color:#fff; font-weight:bold; border:none; border-radius:8px; cursor:pointer; animation:pulse 1.2s infinite alternate; z-index:50; }
+  @keyframes pulse { from{transform:scale(1);box-shadow:0 0 10px #00ff00;} to{transform:scale(1.08);box-shadow:0 0 25px #00ff00;} }
+
+  #tema4Emoji { position:fixed; top:10px; left:10px; font-size:32px; cursor:pointer; z-index:1000; }
+</style>
+</head>
+<body>
+
+<div id="tema4Emoji" title="Ir para Tema 4">🆚</div>
+
+<h1 id="title">⚡EDCELL-TECH🔌</h1>
+<button id="doarBtnFixo">❤️ Doação</button>
+
+<div class="menu" id="menu">
+    <button class="accordion-btn">Utilitários e Ferramentas</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Servicos-Digitais/">Serviços Digitais</a>
+      <a href="https://usuario2207ed-hue.github.io/Navigator/">Navigator</a>
+      <a href="https://usuario2207ed-hue.github.io/Ferramentas-de-IAs/">IAs</a>         
+      <a href="https://usuario2207ed-hue.github.io/GoEdcell/">GoEdcell</a> 
+      <a href="https://usuario2207ed-hue.github.io/Calculadora/">Calculadora</a>
+      <a href="https://usuario2207ed-hue.github.io/Calendario/">Calendário</a>
+      <a href="https://usuario2207ed-hue.github.io/Relogio-Online/">Relógio Online</a>
+      <a href="https://usuario2207ed-hue.github.io/Apps-Essenciais/">Apps Essenciais</a>
+      <a href="https://usuario2207ed-hue.github.io/IAs-Gratuitas/">IAs Gratuitas</a>
+      <a href="https://usuario2207ed-hue.github.io/Servicos-temporarios/">Serviços temporarios</a>
+      <a href="https://usuario2207ed-hue.github.io/Sistema-Financeiro/">Sistema Financeiro</a>
+      <a href="https://usuario2207ed-hue.github.io/MyDoc/">Carteira Digital</a>
+    </div>
+
+    <button class="accordion-btn">Segurança e OSINT</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/enigma/">Enigma</a>         
+      <a href="https://usuario2207ed-hue.github.io/Ferramentas-OSINT/">Ferramentas OSINT</a>
+      <a href="https://usuario2207ed-hue.github.io/Rastreador-Bloqueador-de-Celulares/">Rastreador de Celulares</a>
+      <a href="https://usuario2207ed-hue.github.io/Dork-Finder/">Dork Finder</a>
+      <a href="https://usuario2207ed-hue.github.io/SecureHub/">SecureHub</a>
+      <a href="https://usuario2207ed-hue.github.io/Detetive-de-encurtadores/">Detetive de encurtadores</a>
+      <a href="https://usuario2207ed-hue.github.io/Investigador-OSINT/">Investigador OSINT</a>
+      <a href="https://usuario2207ed-hue.github.io/Atributos---Seguranca/">Atributos Segurança</a>
+    </div>
+
+    <button class="accordion-btn">Desenvolvimento e TI</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Ferramentas-TI/">Ferramentas TI</a>
+      <a href="https://usuario2207ed-hue.github.io/Dashboard-PC-Monitor/">Dashboard PC Monitor</a>
+      <a href="https://usuario2207ed-hue.github.io/Acelerador-de-HD-SSD/">Acelerador de HD/SSD</a>
+    </div>
+
+    <button class="accordion-btn">Entretenimento e Jogos</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Jogo-da-velha/">Jogo da Velha</a>        
+      <a href="https://usuario2207ed-hue.github.io/Dama/">Damas</a>
+      <a href="https://usuario2207ed-hue.github.io/">Pega Pernilongo</a>
+      <a href="https://usuario2207ed-hue.github.io/RODOCELL/">RodoCell</a>
+      <a href="https://usuario2207ed-hue.github.io/Snake/">Snake</a>
+      <a href="https://usuario2207ed-hue.github.io/TETRIS/">Tetris</a>
+      <a href="https://usuario2207ed-hue.github.io/Xadrez/">Xadrez</a>
+      <a href="https://usuario2207ed-hue.github.io/Sinuca/">Sinuca</a>
+      <a href="https://usuario2207ed-hue.github.io/Jogos-Online/">Jogos Online</a>
+      <a href="https://usuario2207ed-hue.github.io/Troll-Gamer/">Troll Gamer</a>
+    </div>
+     
+    <button class="accordion-btn">Gestão e Produtividade</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Ferramenta-5W2H/">Ferramenta 5W2H</a>         
+      <a href="https://usuario2207ed-hue.github.io/Comunicacao-Analise-Online/">Comunicação e Análise</a>
+      <a href="https://usuario2207ed-hue.github.io/Painel-OEE/">Painel OEE</a>
+      <a href="https://usuario2207ed-hue.github.io/5W2H-ISHIKAWA/">5W2H & ISHIKAWA</a>
+      <a href="https://usuario2207ed-hue.github.io/Ferramenta-PDCA/">Ferramenta PDCA</a>
+      <a href="https://usuario2207ed-hue.github.io/Paint-Shop-Predictive/">Control center</a>
+      <a href="https://usuario2207ed-hue.github.io/Guardian/">EPI-CAM</a> 
+      <a href="https://usuario2207ed-hue.github.io/Calculadora-de-Massa-Molecular/">Calculadora Molecular</a> 
+      <a href="https://usuario2207ed-hue.github.io/Tabela-Periodica/">Tabela Periódica</a>
+      <a href="https://usuario2207ed-hue.github.io/Ficha-de-elementos/">Ficha de elementos</a>
+      <a href="https://usuario2207ed-hue.github.io/Plataforma-Integrada/">Plataforma Integrada</a>                   
+    </div>
+
+    <button class="accordion-btn">Rede e Infraestrutura</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Teste-de-Velocidade/">Teste de Velocidade</a>
+      <a href="https://usuario2207ed-hue.github.io/Monitor-de-Tr-fego-de-Rede/">Monitor de Tráfego</a>
+      <a href="https://usuario2207ed-hue.github.io/Monitor-de-Redes/">Monitor de Redes</a>   
+      <a href="https://usuario2207ed-hue.github.io/Servidor-HTML/">Servidor HTML</a>      
+    </div>
+
+    <button class="accordion-btn">Outros</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Streaming-Hub/">Streaming-Hub</a>   
+      <a href="https://usuario2207ed-hue.github.io/Noticias/">Notícias de Tecnologia</a>
+      <a href="https://usuario2207ed-hue.github.io/Universo/">Universo</a>        
+    </div>
+</div>
+
+  <footer>🏗️ Desenvolvido por EDCELL-TECH</footer>
+
+<script>
+const title = document.getElementById("title");
+const tema4Emoji = document.getElementById("tema4Emoji");
+
+if(localStorage.getItem("temaEscolhido") === "tema4"){
+  window.location.href = "tema4.html";
+}
+
+tema4Emoji.addEventListener("click", ()=>{
+  localStorage.setItem("temaEscolhido","tema4");
+  window.location.href = "tema4.html";
+});
+
+const body = document.body;
+const footer = document.querySelector("footer");
+const menuEls = document.querySelectorAll(".accordion-btn, .accordion-panel a");
+
+let lastTime = parseFloat(localStorage.getItem("bgTime")) || 0;
+const cycle = 600000;
+
+function updateBackground() {
+  lastTime = (lastTime + 1000/60) % cycle;
+  localStorage.setItem("bgTime", lastTime);
+
+  let phase = lastTime / (cycle / 2);
+  if (phase > 1) phase = 2 - phase;
+
+  const gray = Math.floor(phase * 255);
+  body.style.backgroundColor = `rgb(${gray},${gray},${gray})`;
+
+  const accent = gray > 127 ? "#000" : "#0f0";
+
+  body.style.color = accent;
+  title.style.color = accent;
+  title.style.textShadow = `0 0 12px ${accent}`;
+  footer.style.color = accent;
+  menuEls.forEach(el => {
+    el.style.color = accent;
+    el.style.borderColor = accent;
+  });
+
+  requestAnimationFrame(updateBackground);
+}
+updateBackground();
+
+function neonFlicker(callback) {
+  let elapsed = 0;
+  let intensity = 0;
+  const interval = setInterval(() => {
+    elapsed += 100;
+    intensity += 0.02;
+    if (elapsed < 60000) {
+      title.style.opacity = (Math.random() < 0.05) ? 0.4 : 1;
+    } else {
+      title.style.opacity = Math.abs(Math.sin(intensity));
+    }
+  }, 100);
+  setTimeout(() => {
+    clearInterval(interval);
+    title.style.opacity = 1;
+    callback();
+  }, 75000);
+}
+
+function explodeTitle() {
+  const text = title.innerText;
+  const rect = title.getBoundingClientRect();
+  title.style.visibility = "hidden";
+  for (let char of text) {
+    if (char.trim() === "") continue;
+    const span = document.createElement("span");
+    span.innerText = char;
+    span.className = "letter";
+    span.style.left = rect.left + rect.width/2 + "px";
+    span.style.top = rect.top + rect.height/2 + "px";
+    span.style.setProperty("--x", (Math.random()*window.innerWidth - window.innerWidth/2) + "px");
+    span.style.setProperty("--y", (Math.random()*window.innerHeight - window.innerHeight/2) + "px");
+    document.body.appendChild(span);
+    setTimeout(()=>span.remove(), 5000);
+  }
+  setTimeout(()=>{ title.style.visibility="visible"; startLoop(); },10000);
+}
+function startLoop(){ neonFlicker(explodeTitle); }
+startLoop();
+
+document.querySelectorAll(".accordion-panel a").forEach(link=>{
+  link.addEventListener("click", function(e){
+    e.preventDefault();
+    this.classList.add("clicked");
+    setTimeout(()=>{ window.location.href = this.href; },300);
+  });
+});
+const accButtons=document.querySelectorAll(".accordion-btn");
+accButtons.forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const panel=btn.nextElementSibling;
+    const active=btn.classList.contains("active");
+    accButtons.forEach(b=>{ b.classList.remove("active"); b.nextElementSibling.style.maxHeight=null; });
+    if(!active){ btn.classList.add("active"); panel.style.maxHeight=panel.scrollHeight+"px"; }
+  });
+});
+
+window.addEventListener("load",()=>{
+  const doarBtnFixo=document.getElementById("doarBtnFixo");
+  doarBtnFixo.addEventListener("click",()=>{
+    const popup=document.createElement("div");
+    popup.className="popup";
+    popup.innerHTML=`
+      <div class="popup-content">
+        <div class="popup-close" id="popupClose">✖</div>
+        <h2>“O Senhor te concederá abundância de bens... abrirá o céu, para dar chuva à tua terra e abençoar todo o trabalho das tuas mãos.”</h2>
+        <h2>Deuteronômio 28:11-12</h2>
+        <button id="doarBtn">Doe ❤️</button>
+      </div>`;
+    document.body.appendChild(popup);
+    const doarBtn=document.getElementById("doarBtn");
+    const popupClose=document.getElementById("popupClose");
+    let clicouDoar=false;
+    doarBtn.addEventListener("click",()=>{
+      clicouDoar=true;
+      window.open("https://link.mercadopago.com.br/abrindoportas","_blank");
+      popup.remove();
+    });
+    popupClose.addEventListener("click",()=>{
+      popup.remove();
+      if(!clicouDoar){ doarBtnFixo.style.display="block"; }
+    });
+  });
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

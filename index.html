@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>EDCELL-TECH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="google-adsense-account" content="ca-pub-3403987938490863">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3403987938490863"
+     crossorigin="anonymous"></script>
+
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<meta name="theme-color" content="#4f8cff">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<script>
+
+const LOGIN_PADRAO = "Admin";
+const SENHA_PADRAO = "136763";
+
+function validarLogin(){
+
+    const usuario =
+    document.getElementById("usuario").value.trim();
+
+    const senha =
+    document.getElementById("senha").value.trim();
+
+    const salvar =
+    document.getElementById("salvarLogin").checked;
+
+    if(
+        usuario === LOGIN_PADRAO &&
+        senha === SENHA_PADRAO
+    ){
+
+        sessionStorage.setItem(
+            "autenticado",
+            "sim"
+        );
+
+        if(salvar){
+
+            localStorage.setItem(
+                "usuarioSalvo",
+                usuario
+            );
+
+            localStorage.setItem(
+                "senhaSalva",
+                senha
+            );
+
+            localStorage.setItem(
+                "salvarLogin",
+                "sim"
+            );
+
+        }else{
+
+            localStorage.clear();
+
+        }
+
+        document.getElementById(
+            "loginOverlay"
+        ).style.display =
+        "none";
+
+    }else{
+
+        document.getElementById(
+            "erroLogin"
+        ).innerText =
+        "Usuário ou senha incorretos";
+
+    }
+
+}
+
+window.onload = function(){
+
+    const usuarioSalvo =
+    localStorage.getItem(
+        "usuarioSalvo"
+    );
+
+    const senhaSalva =
+    localStorage.getItem(
+        "senhaSalva"
+    );
+
+    if(
+        usuarioSalvo &&
+        senhaSalva
+    ){
+
+        document.getElementById(
+            "usuario"
+        ).value =
+        usuarioSalvo;
+
+        document.getElementById(
+            "senha"
+        ).value =
+        senhaSalva;
+
+        document.getElementById(
+            "salvarLogin"
+        ).checked =
+        true;
+
+    }
+
+    if(
+        sessionStorage.getItem(
+            "autenticado"
+        ) === "sim"
+    ){
+
+        document.getElementById(
+            "loginOverlay"
+        ).style.display =
+        "none";
+
+    }
+
+};
+
+</script>
+   
+<body>
+     
+<!-- AUTENTICAÇÃO -->
+<div id="loginOverlay" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000000ee;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+">
+
+<div style="
+background:white;
+padding:30px;
+border-radius:10px;
+width:300px;
+text-align:center;
+">
+
+<h2>🔒 Acesso Restrito</h2>
+
+<input
+type="text"
+id="usuario"
+placeholder="Usuário"
+style="width:100%;padding:10px;margin:5px 0;"
+>
+
+<input
+type="password"
+id="senha"
+placeholder="Senha"
+style="width:100%;padding:10px;margin:5px 0;"
+>
+
+<label style="
+display:flex;
+align-items:center;
+gap:8px;
+margin:10px 0;
+font-size:14px;
+">
+
+<input
+type="checkbox"
+id="salvarLogin"
+>
+
+Salvar senha
+
+</label>
+
+<button
+onclick="validarLogin()"
+style="
+width:100%;
+padding:10px;
+background:#007bff;
+color:white;
+border:none;
+cursor:pointer;
+">
+Entrar
+</button>
+
+<p id="erroLogin" style="color:red;"></p>
+
+</div>
+</div>
+     
+<div id="tema2Emoji" title="Ir para Tema 2">🆚</div>
+
+<h1 id="title">⚡EDCELL-TECH🔌</h1>
+
+<button id="doarBtnFixo">❤️ Doação</button>
+     
+<div class="menu" id="menu">
+    <button class="accordion-btn">Utilitários e Ferramentas</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Servicos-Digitais/">Serviços Digitais</a>
+      <a href="https://usuario2207ed-hue.github.io/Navigator/">Navigator</a>
+      <a href="https://usuario2207ed-hue.github.io/Ferramentas-de-IAs/">IAs</a>         
+      <a href="https://usuario2207ed-hue.github.io/GoEdcell/">GoEdcell</a> 
+      <a href="https://usuario2207ed-hue.github.io/Calculadora/">Calculadora</a>
+      <a href="https://usuario2207ed-hue.github.io/Calendario/">Calendário</a>
+      <a href="https://usuario2207ed-hue.github.io/Relogio-Online/">Relógio Online</a>
+      <a href="https://usuario2207ed-hue.github.io/Apps-Essenciais/">Apps Essenciais</a>
+      <a href="https://usuario2207ed-hue.github.io/IAs-Gratuitas/">IAs Gratuitas</a>
+      <a href="https://usuario2207ed-hue.github.io/Servicos-temporarios/">Serviços temporarios</a>
+      <a href="https://usuario2207ed-hue.github.io/Sistema-Financeiro/">Sistema Financeiro</a>
+      <a href="https://usuario2207ed-hue.github.io/MyDoc/">Carteira Digital</a>
+    </div>
+
+    <button class="accordion-btn">Segurança e OSINT</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/enigma/">Enigma</a>         
+      <a href="https://usuario2207ed-hue.github.io/Ferramentas-OSINT/">Ferramentas OSINT</a>
+      <a href="https://usuario2207ed-hue.github.io/Rastreador-Bloqueador-de-Celulares/">Rastreador de Celulares</a>
+      <a href="https://usuario2207ed-hue.github.io/Dork-Finder/">Dork Finder</a>
+      <a href="https://usuario2207ed-hue.github.io/SecureHub/">SecureHub</a>
+      <a href="https://usuario2207ed-hue.github.io/Detetive-de-encurtadores/">Detetive de encurtadores</a>
+      <a href="https://usuario2207ed-hue.github.io/Investigador-OSINT/">Investigador OSINT</a>
+      <a href="https://usuario2207ed-hue.github.io/Atributos---Seguranca/">Atributos Segurança</a>
+    </div>
+
+    <button class="accordion-btn">Desenvolvimento e TI</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Ferramentas-TI/">Ferramentas TI</a>
+      <a href="https://usuario2207ed-hue.github.io/Dashboard-PC-Monitor/">Dashboard PC Monitor</a>
+      <a href="https://usuario2207ed-hue.github.io/Acelerador-de-HD-SSD/">Acelerador de HD/SSD</a>
+    </div>
+
+    <button class="accordion-btn">Entretenimento e Jogos</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Jogo-da-velha/">Jogo da Velha</a>        
+      <a href="https://usuario2207ed-hue.github.io/Dama/">Damas</a>
+      <a href="https://usuario2207ed-hue.github.io/">Pega Pernilongo</a>
+      <a href="https://usuario2207ed-hue.github.io/RODOCELL/">RodoCell</a>
+      <a href="https://usuario2207ed-hue.github.io/Snake/">Snake</a>
+      <a href="https://usuario2207ed-hue.github.io/TETRIS/">Tetris</a>
+      <a href="https://usuario2207ed-hue.github.io/Xadrez/">Xadrez</a>
+      <a href="https://usuario2207ed-hue.github.io/Sinuca/">Sinuca</a>
+      <a href="https://usuario2207ed-hue.github.io/Jogos-Online/">Jogos Online</a>
+      <a href="https://usuario2207ed-hue.github.io/Troll-Gamer/">Troll Gamer</a>
+    </div>
+     
+    <button class="accordion-btn">Gestão e Produtividade</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Ferramenta-5W2H/">Ferramenta 5W2H</a>         
+      <a href="https://usuario2207ed-hue.github.io/Comunicacao-Analise-Online/">Comunicação e Análise</a>
+      <a href="https://usuario2207ed-hue.github.io/Painel-OEE/">Painel OEE</a>
+      <a href="https://usuario2207ed-hue.github.io/5W2H-ISHIKAWA/">5W2H & ISHIKAWA</a>
+      <a href="https://usuario2207ed-hue.github.io/Ferramenta-PDCA/">Ferramenta PDCA</a>
+      <a href="https://usuario2207ed-hue.github.io/Paint-Shop-Predictive/">Control center</a>
+      <a href="https://usuario2207ed-hue.github.io/Vedacao/">Falhas & Relatórios</a>
+      <a href="https://usuario2207ed-hue.github.io/Guardian/">EPI-CAM</a> 
+      <a href="https://usuario2207ed-hue.github.io/Calculadora-de-Massa-Molecular/">Calculadora Molecular</a> 
+      <a href="https://usuario2207ed-hue.github.io/Tabela-Periodica/">Tabela Periódica</a>
+      <a href="https://usuario2207ed-hue.github.io/Ficha-de-elementos/">Ficha de elementos</a>
+      <a href="https://usuario2207ed-hue.github.io/Plataforma-Integrada/">Plataforma Integrada</a>                   
+    </div>
+
+    <button class="accordion-btn">Rede e Infraestrutura</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Teste-de-Velocidade/">Teste de Velocidade</a>
+      <a href="https://usuario2207ed-hue.github.io/Monitor-de-Tr-fego-de-Rede/">Monitor de Tráfego</a>
+      <a href="https://usuario2207ed-hue.github.io/Monitor-de-Redes/">Monitor de Redes</a>   
+      <a href="https://usuario2207ed-hue.github.io/Servidor-HTML/">Servidor HTML</a>      
+    </div>
+
+    <button class="accordion-btn">Outros</button>
+    <div class="accordion-panel">
+      <a href="https://usuario2207ed-hue.github.io/Streaming-Hub/">Streaming-Hub</a>   
+      <a href="https://usuario2207ed-hue.github.io/Noticias/">Notícias de Tecnologia</a>
+      <a href="https://usuario2207ed-hue.github.io/Universo/">Universo</a>        
+    </div>
+</div>
+
+<footer>🏗️ Desenvolvido por EDCELL-TECH</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

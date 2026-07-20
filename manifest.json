@@ -1,0 +1,22 @@
+{
+  "name": "EDCELL-TECH",
+  "short_name": "EDCELL",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#4f8cff",
+  "description": "Portal EDCELL-TECH — ferramentas digitais, utilitários e jogos online desenvolvidos por Edcelltech.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
